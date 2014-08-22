@@ -1,0 +1,57 @@
+Quiz: Lesson 2
+
+Some exercises from lesson 2 materials:
+
+Name what each of the below is:
+
+
+  a = 1
+  # => ex. a is a local variable, and is a Fixnum object with
+  value 1
+  @a = 2
+  # => @a is an instance variable, and is a Fixnum object with value 2
+  user = User.new
+  # => user is a local variable that has been set to a new instance object of class User
+  user.name
+  # => user.name uses the local variable user that must have been set with an instance variable name that was initialized in a class and calling that name on the local variable user with the name getter instance method.
+
+  user.name = "Joe"
+  # => user.name uses the local variable user that must have been set with an instance variable name that was initialized in a class and calling that name on the local variable user with the name getter instance method and then sets it to a string "Joe" with the setter method.
+
+How does a class mixin a module?
+
+The module is created and holds methods that multiple methods have in common from different classes and can be used by using include and the module name.
+
+What's the difference between class variables and instance variables?
+
+A class variable has 2 @ symbols in front of the name ex. @@person.  An instance variable only has 1 @ symbol in front of the name ex: @person.  A class variable can only be used in the class it was created in and it's decendants. An instance variable can only be shared within the class.
+
+What does attr_accessor do?
+
+It allows you to read and right to the instance variable.
+
+How would you describe this expression: Dog.some_method
+
+The method some_method is using self, which is calling some_method on the class Dog.
+
+In Ruby, what's the difference between subclassing and mixing in modules?
+
+A class can only have one subclass, but it can mix in as many modules as it wants.  Subclass is an "is a" relationship.  Mixing in modules is a "has a" relationship.
+
+Given that I can instantiate a user like this: User.new('Bob'), what would the initialize method look like for the User class?
+
+  class User
+    attr_accessor :name
+
+    def initialize(name)
+      self.name = name
+    end
+  end
+
+Can you call instance methods of the same class from other instance methods in that class?
+
+Yes
+
+When you get stuck, what's the process you use to try to trap the error?
+
+Use the gem Pry by putting require 'pry' at the top of the program and put binding.pry where you want to test in the application.
